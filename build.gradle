@@ -1,7 +1,7 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.3'
-		springBootVersion = '1.5.4.RELEASE'
+		kotlinVersion = '1.2.10'
+		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -28,6 +28,9 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	springCloudVersion = 'Edgware.RELEASE'
+}
 
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
@@ -38,6 +41,6 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
